@@ -1,3 +1,4 @@
+/*
 import 'package:flutter/material.dart';
 import 'dart:async';
 import '../second_screen.dart';
@@ -32,3 +33,4 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     );
   }
 }
+*/

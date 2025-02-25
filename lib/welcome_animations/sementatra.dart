@@ -1,8 +1,10 @@
+/*
 import 'package:flutter/material.dart';
 import 'main_screens/welcome_screen.dart';
 import 'main_screens/second_screen.dart';
 import 'main_screens/third_screen.dart';
 import 'main_screens/fourth_screen.dart';
+
 
 void main() => runApp(MyApp());
 
@@ -22,3 +24,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+*/
