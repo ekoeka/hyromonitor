@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hyromonitor/Services/auth_services.dart';
-import '../screens/Home/home_page.dart';
-import '../screens/home/welcome_screen.dart';
+import '../main_screens/home/home_page.dart';
+import '../welcome_animations/welcome_screen.dart';
 
 void main() => runApp(MyApp());
 
