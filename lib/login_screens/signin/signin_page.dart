@@ -40,6 +40,7 @@ class SignInPage extends StatelessWidget {
                       Text(
                         'SIGN IN',
                         style: TextStyle(
+                          fontFamily: 'Lilita One',
                           fontSize: 32,
                           fontWeight: FontWeight.bold,
                           color:  Colors.white,
