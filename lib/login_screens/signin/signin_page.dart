@@ -47,15 +47,15 @@ class SignInPage extends StatelessWidget {
                       ),
                     ],
                   ),
+                  SizedBox(height: 20),
                   Text(
-                    'USERNAME',
+                    '   USERNAME',
                     style: TextStyle(
-                      fontSize: 30,
+                      fontSize: 16,
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 40),
                   TextField(
                       decoration: InputDecoration(
                         filled: true,
@@ -68,15 +68,15 @@ class SignInPage extends StatelessWidget {
                         ),
                       ),
                   ),
+                  SizedBox(height: 10),
                   Text(
-                    'PASSWORD',
+                    '   PASSWORD',
                     style: TextStyle(
-                        fontSize: 30,
+                        fontSize: 16,
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 20),
                   TextField(
                     decoration: InputDecoration(
                       filled: true,
@@ -88,12 +88,18 @@ class SignInPage extends StatelessWidget {
                   ),
                   SizedBox(height: 20),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
-                        'FORGOT YOUR PASSWORD?',
-                        style: TextStyle(color: Colors.white),
+                      TextButton(
+                          onPressed: (){
+                            //forgot page
+                          },
+                          child: Text(
+                            'FORGOT YOUR PASSWORD?',
+                            style: TextStyle(color: Colors.white),
+                          ),
                       ),
+                      SizedBox(width: 5),
                       Text(
                         '|',
                         style: TextStyle(
@@ -101,29 +107,47 @@ class SignInPage extends StatelessWidget {
                             color: Colors.white
                         ),
                       ),
-                      Text(
-                        "DONT HAVE AN ACCOUNT?",
-                        style: TextStyle(color: Colors.white),
+                      SizedBox(width: 5),
+                      TextButton(
+                        onPressed: (){
+                          //forgot page
+                        },
+                        child: Text(
+                          "DONT HAVE AN ACCOUNT?",
+                          style: TextStyle(color: Colors.white),
+                        ),
                       ),
+
                     ],
                   ),
-                  SizedBox(height: 16),
-                  ElevatedButton(
-                    onPressed: (){
-                      //handle sign-in here
-                    },
-                    style: ElevatedButton.styleFrom(
-                      foregroundColor: Colors.green,
-                      backgroundColor: Colors.white,
-                      padding: EdgeInsets.symmetric(vertical: 15),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                    ),
-                    child: Text(
-                      'SIGN IN',
-                      style:  TextStyle(fontSize: 18),
-                    ),
+                  SizedBox(height: 50),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ElevatedButton(
+                        onPressed: (){
+                          //handle sign-in here
+                        },
+                        style: ElevatedButton.styleFrom(
+                          foregroundColor: Colors.white,
+                          backgroundColor: Color(0xFF01D150),
+                          padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30),
+                            side: BorderSide(
+                              color: Colors.white,
+                              width: 1.0,
+                            )
+                          ),
+                        ),
+                        child: Text(
+                          'SIGN IN',
+                          style:  TextStyle(
+                              fontSize: 16
+                          ),
+                        ),
+                      )
+                    ],
                   )
                 ],
               ),
