@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hyromonitor/Services/auth_services.dart';
+import 'package:hyromonitor/all_used/all_style_text.dart';
 
 class SignInPage extends StatelessWidget {
   const SignInPage({super.key});
@@ -39,23 +40,14 @@ class SignInPage extends StatelessWidget {
                     children: [
                       Text(
                         'SIGN IN',
-                        style: TextStyle(
-                          fontFamily: 'Lilita One',
-                          fontSize: 32,
-                          fontWeight: FontWeight.bold,
-                          color:  Colors.white,
-                        ),
+                        style: SignFontManager.judul
                       ),
                     ],
                   ),
                   SizedBox(height: 20),
                   Text(
                     '   USERNAME',
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: SignFontManager.textbox
                   ),
                   TextField(
                       decoration: InputDecoration(
@@ -72,11 +64,7 @@ class SignInPage extends StatelessWidget {
                   SizedBox(height: 10),
                   Text(
                     '   PASSWORD',
-                    style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                    ),
+                    style: SignFontManager.textbox
                   ),
                   TextField(
                     decoration: InputDecoration(
@@ -97,7 +85,7 @@ class SignInPage extends StatelessWidget {
                           },
                           child: Text(
                             'FORGOT YOUR PASSWORD?',
-                            style: TextStyle(color: Colors.white),
+                            style: SignFontManager.anotherbutton,
                           ),
                       ),
                       SizedBox(width: 5),
@@ -115,7 +103,7 @@ class SignInPage extends StatelessWidget {
                         },
                         child: Text(
                           "DONT HAVE AN ACCOUNT?",
-                          style: TextStyle(color: Colors.white),
+                          style: SignFontManager.anotherbutton,
                         ),
                       ),
 
@@ -143,9 +131,7 @@ class SignInPage extends StatelessWidget {
                         ),
                         child: Text(
                           'SIGN IN',
-                          style:  TextStyle(
-                              fontSize: 16
-                          ),
+                          style:  SignFontManager.button
                         ),
                       )
                     ],
@@ -160,89 +146,3 @@ class SignInPage extends StatelessWidget {
     );
   }
 }
-
-/*
-import 'package:flutter/material.dart';
-
-class SignInPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.green,
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(24.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                'SIGN IN',
-                style: TextStyle(
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
-              ),
-              SizedBox(height: 40),
-              TextField(
-                decoration: InputDecoration(
-                  labelText: 'USERNAME',
-                  labelStyle: TextStyle(color: Colors.white),
-                  filled: true,
-                  fillColor: Colors.white,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                ),
-              ),
-              SizedBox(height: 16),
-              TextField(
-                obscureText: true,
-                decoration: InputDecoration(
-                  labelText: 'PASSWORD',
-                  labelStyle: TextStyle(color: Colors.white),
-                  filled: true,
-                  fillColor: Colors.white,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                ),
-              ),
-              SizedBox(height: 24),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'FORGOT YOUR PASSWORD?',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  Text(
-                    "DON'T HAVE AN ACCOUNT?",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ],
-              ),
-              SizedBox(height: 16),
-              ElevatedButton(
-                onPressed: () {
-                  // TODO: Implement sign-in logic
-                },
-                style: ElevatedButton.styleFrom(
-                  foregroundColor: Colors.green,
-                  backgroundColor: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                ),
-                child: Text('SIGN IN'),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-
- */
