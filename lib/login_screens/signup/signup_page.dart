@@ -3,6 +3,7 @@ import 'package:hyromonitor/Services/auth_services.dart';
 import 'package:hyromonitor/all_used/all_background_part/all_background_parts.dart';
 import 'package:hyromonitor/all_used/all_input_decoration.dart';
 import 'package:hyromonitor/all_used/all_style_text.dart';
+import 'package:hyromonitor/login_screens/signin/signin_page.dart';
 import 'package:hyromonitor/login_screens/signup/signup_second_page.dart';
 
 class SignUpPage extends StatelessWidget {
@@ -61,7 +62,11 @@ class SignUpPage extends StatelessWidget {
                     children: [
                       TextButton(
                         onPressed: (){
-                          //go to Sign In
+                          Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(builder: (context) => SignInPage()),
+                                (Route<dynamic> route) => route.isFirst,
+                          );
                         },
                         child: Text(
                           "ALREADY HAVE AN ACCOUNT?",
@@ -78,7 +83,22 @@ class SignUpPage extends StatelessWidget {
                         onPressed: (){
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => const SignUpSecondPage()),
+                            PageRouteBuilder(
+                              pageBuilder: (context, animation, secondaryAnimation) => SignUpSecondPage(),
+                              transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                                var begin = Offset(-1.0, 0.0);
+                                var end = Offset.zero;
+                                var curve = Curves.ease;
+
+                                var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+                                var offsetAnimation = animation.drive(tween);
+
+                                return SlideTransition(
+                                  position: offsetAnimation,
+                                  child: child,
+                                );
+                              },
+                            ),
                           );
                         },
                         style: ElevatedButton.styleFrom(

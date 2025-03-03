@@ -3,6 +3,7 @@ import 'package:hyromonitor/Services/auth_services.dart';
 import 'package:hyromonitor/all_used/all_background_part/all_background_parts.dart';
 import 'package:hyromonitor/all_used/all_input_decoration.dart';
 import 'package:hyromonitor/all_used/all_style_text.dart';
+import 'package:hyromonitor/login_screens/signin/signin_page.dart';
 
 class SignUpSecondPage extends StatelessWidget {
   const SignUpSecondPage({super.key});
@@ -60,7 +61,11 @@ class SignUpSecondPage extends StatelessWidget {
                     children: [
                       TextButton(
                         onPressed: (){
-                          //go to Sign In
+                          Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(builder: (context) => SignInPage()),
+                                (Route<dynamic> route) => route.isFirst,
+                          );
                         },
                         child: Text(
                           "ALREADY HAVE AN ACCOUNT?",

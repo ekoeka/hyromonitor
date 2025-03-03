@@ -3,6 +3,7 @@ import 'package:hyromonitor/Services/auth_services.dart';
 import 'package:hyromonitor/all_used/all_background_part/all_background_parts.dart';
 import 'package:hyromonitor/all_used/all_input_decoration.dart';
 import 'package:hyromonitor/all_used/all_style_text.dart';
+import 'package:hyromonitor/login_screens/signup/signup_page.dart';
 
 class SignInPage extends StatelessWidget {
   const SignInPage({super.key});
@@ -70,7 +71,25 @@ class SignInPage extends StatelessWidget {
                       SizedBox(width: 5),
                       TextButton(
                         onPressed: (){
-                          //forgot page
+                          Navigator.push(
+                            context,
+                            PageRouteBuilder(
+                              pageBuilder: (context, animation, secondaryAnimation) => SignUpPage(),
+                              transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                                var begin = Offset(-1.0, 0.0);
+                                var end = Offset.zero;
+                                var curve = Curves.ease;
+
+                                var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+                                var offsetAnimation = animation.drive(tween);
+
+                                return SlideTransition(
+                                  position: offsetAnimation,
+                                  child: child,
+                                );
+                              },
+                            ),
+                          );
                         },
                         child: Text(
                           "DONT HAVE AN ACCOUNT?",
